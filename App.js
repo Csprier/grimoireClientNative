@@ -28,14 +28,7 @@ const App = () => {
   return (
     <Fragment>
       <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
+        <ScrollView contentInsetAdjustmentBehavior="automatic">
           <View style={styles.body}>
             <Text>Hello world</Text>
           </View>
