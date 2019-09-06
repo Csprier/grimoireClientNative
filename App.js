@@ -13,6 +13,8 @@ import {
   StatusBar,
 } from 'react-native';
 
+import Login from './components/Login';
+
 const App = () => {
   return (
     <Fragment>
@@ -20,6 +22,7 @@ const App = () => {
         <ScrollView style={styles.scrollView}>
           <View style={styles.body}>
             <Text>Hello world</Text>
+            <Login />
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -29,10 +32,11 @@ const App = () => {
 
 const styles = StyleSheet.create({
   scrollView: {
-    backgroundColor: Colors.lighter,
+    width: 100,
+    height: 100
   },
   body: {
-    backgroundColor: Colors.white,
+    flex: 1
   }
 });
 
