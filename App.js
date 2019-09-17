@@ -21,7 +21,6 @@ const App = () => {
       <SafeAreaView>
         <ScrollView style={styles.scrollView}>
           <View style={styles.body}>
-            <Text>Hello world</Text>
             <Login />
           </View>
         </ScrollView>

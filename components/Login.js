@@ -1,16 +1,13 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import {
   Button,
   Dimensions,
-  KeyboardAvoidingView,
   SafeAreaView,
   StyleSheet,
   ScrollView,
   View,
   Text,
-  TextInput,
-  TouchableHighlight,
-  TouchableOpacity
+  TextInput
 } from 'react-native';
 
 export default class Login extends Component {
@@ -25,7 +22,8 @@ export default class Login extends Component {
   _submitLoginInfo = () => {
     const username = this.state.username,
           password = this.state.password;
-    console.log(`${username}, ${password}`);
+    alert('username: ' + username);
+    alert('password: ', password);
   }
 
   render() {
@@ -49,8 +47,8 @@ export default class Login extends Component {
               onPress={() => alert(this.state.username, this.state.password)}
             >Login</Button>
             <View style={styles.container}>
-              <Text>{this.state.username}</Text>
-              <Text>{this.state.password}</Text>
+              <Text>Username: {this.state.username}</Text>
+              <Text>Password: {this.state.password}</Text>
             </View>
           </View>
         </ScrollView>
@@ -64,28 +62,20 @@ const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
     height: ScreenHeight,
-    width: ScreenWidth,
-    borderColor: 'orange', 
-    borderWidth: 1 
+    width: ScreenWidth
   },
   body: {
     flex: 1,
-    alignItems: 'center',
-    borderColor: 'blue', 
-    borderWidth: 1 
+    alignItems: 'center'
   },
   container: {
-    flex: 1,
-    borderColor: 'red', 
-    borderWidth: 1 
+    flex: 1
   },
   textInput: {
     flex: 1,
     height: 40, 
     width: ScreenWidth,
     padding: 5,
-    marginBottom: 2,
-    borderColor: 'gray', 
-    borderWidth: 1 
+    marginBottom: 2
   }
 });
