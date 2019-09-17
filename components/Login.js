@@ -22,8 +22,7 @@ export default class Login extends Component {
   _submitLoginInfo = () => {
     const username = this.state.username,
           password = this.state.password;
-    alert('username: ' + username);
-    alert('password: ', password);
+    console.log(`Username: ${username}, Password: ${password}`);
   }
 
   render() {
@@ -44,12 +43,8 @@ export default class Login extends Component {
             />
             <Button
               title="login"
-              onPress={() => alert(this.state.username, this.state.password)}
+              onPress={this._submitLoginInfo}
             >Login</Button>
-            <View style={styles.container}>
-              <Text>Username: {this.state.username}</Text>
-              <Text>Password: {this.state.password}</Text>
-            </View>
           </View>
         </ScrollView>
       </SafeAreaView>
