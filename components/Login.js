@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import {
   Button,
+  Dimensions,
   KeyboardAvoidingView,
   SafeAreaView,
   StyleSheet,
@@ -24,51 +25,67 @@ export default class Login extends Component {
   _submitLoginInfo = () => {
     const username = this.state.username,
           password = this.state.password;
-    alert(username, password);
+    console.log(`${username}, ${password}`);
   }
 
   render() {
     return (
-      <KeyboardAvoidingView behavior="padding" style={styles.container}>
-        <SafeAreaView>
-          <ScrollView style={styles.scrollView}>
-            <View style={styles.body}>
-              <Text>Login</Text>
-              <TextInput 
-                style={{ height: 40 }}
-                placeholder="Username"
-                onChangeText={(username) => this.setState({ username: username })}
-                value={this.state.username}
-              />
-              <TextInput 
-                style={{ height: 40 }}
-                placeholder="Password"
-                onChangeText={(password) => this.setState({ password: password })}
-                value={this.state.password}
-              />
-              <View style={styles.container}>
-                <Text>{this.state.username}</Text>
-                <Text>{this.state.password}</Text>
-              </View>
+      <SafeAreaView>
+        <ScrollView style={styles.scrollView}>
+          <View style={styles.body}>
+            <Text>Login</Text>
+            <TextInput 
+              style={styles.textInput}
+              placeholder="Username"
+              onChangeText={(text) => this.setState({ username: text })}
+            />
+            <TextInput 
+              style={styles.textInput}
+              placeholder="Password"
+              onChangeText={(text) => this.setState({ password: text })}
+            />
+            <Button
+              title="login"
+              onPress={() => alert(this.state.username, this.state.password)}
+            >Login</Button>
+            <View style={styles.container}>
+              <Text>{this.state.username}</Text>
+              <Text>{this.state.password}</Text>
             </View>
-          </ScrollView>
-        </SafeAreaView>
-      </KeyboardAvoidingView>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
     );
   }
 }
-
+let ScreenHeight = Dimensions.get("window").height;
+let ScreenWidth = Dimensions.get("window").width;
 const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
-    // width: 100,
-    // height: 100
+    height: ScreenHeight,
+    width: ScreenWidth,
+    borderColor: 'orange', 
+    borderWidth: 1 
   },
   body: {
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
+    borderColor: 'blue', 
+    borderWidth: 1 
   },
   container: {
-    flex: 1
+    flex: 1,
+    borderColor: 'red', 
+    borderWidth: 1 
+  },
+  textInput: {
+    flex: 1,
+    height: 40, 
+    width: ScreenWidth,
+    padding: 5,
+    marginBottom: 2,
+    borderColor: 'gray', 
+    borderWidth: 1 
   }
 });

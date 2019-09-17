@@ -5,12 +5,12 @@
 
 import React, {Fragment} from 'react';
 import {
+  Dimensions,
   SafeAreaView,
-  StyleSheet,
   ScrollView,
-  View,
+  StyleSheet,
   Text,
-  StatusBar,
+  View
 } from 'react-native';
 
 import Login from './components/Login';
@@ -30,10 +30,12 @@ const App = () => {
   );
 };
 
+let ScreenHeight = Dimensions.get("window").height;
+let ScreenWidth = Dimensions.get("window").width;
 const styles = StyleSheet.create({
   scrollView: {
-    width: 100,
-    height: 100
+    height: ScreenHeight,
+    width: ScreenWidth,
   },
   body: {
     flex: 1
